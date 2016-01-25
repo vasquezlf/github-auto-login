@@ -1,0 +1,15 @@
+from selenium import webdriver
+
+print ('Welcome to GitHub Auto-Login')
+username = input('Username: ')
+password = input('Password: ')
+
+browser = webdriver.Firefox()
+browser.get('http://github.com/login')
+
+emailElem = browser.find_element_by_id('login_field')
+emailElem.send_keys(username)
+
+passwordElem = browser.find_element_by_id('password')
+passwordElem.send_keys(password)
+passwordElem.submit()
